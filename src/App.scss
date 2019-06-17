@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contacts{
+  background-color: #f2f2f2;
+  border-right: 1px solid #cecece;
+  .contacts-header{
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 5px;
+  }
+  .contact{
+    margin: 10px 0;
+  }
+}
+
+.chat{
+  background-color: #fafafa;
+}
+
+.chat-header{
+  padding: 10px 15px;
+}
+
+.chat-body{
+  background-image: url(./images/background.png);
+  height: 88vh;
+  .text{
+    display: flex;
+    justify-content: flex-start;
+    p{
+      padding: 5px 10px;
+      border-radius: .25rem;
+    }
+    &:before{
+      content: "";
+      width: 0px;
+      height: 0px;
+    }
+    &.text-sended{
+      justify-content: flex-end;
+      &:before{
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #dcf8c6;
+        position: absolute;
+        right: 8px;
+      }
+      p{
+        background-color: #dcf8c6;
+      }
+      &.sending{
+        &:before{
+          border-left: 10px solid #a3aeb7;
+        }
+        p{
+          background-color: #a3aeb7;
+        }
+      }
+    }
+    &.text-received{
+      &:before{
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #4286f4;
+        margin-right: -3px;
+      }
+      p{
+        background-color: #4286f4;
+        color: #ffffff;
+      }
+    }
+    p{
+      display: inline-block;
+      max-width: 50%;
+    }
+  }
+}
+
+.chat-footer{
+  padding-bottom: 5px;
+  input{
+    width: 90%;
+    display: inline-block;
+  }
+  button{
+    width: calc(10% - 10px);
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: -5px;
+  }
+}
